@@ -9,6 +9,7 @@ const teamModel = require("./../models/Player.js");
 router.get("/", function (req, res, next) {
   teamModel
     .find()
+    .populate("Sport Club")
     .then((dbResTeam) => {
       res.status(200).json(dbResTeam);
     })
@@ -32,8 +33,9 @@ router.get("/", function (req, res, next) {
 router.get("/:id", (req, res) => {
   teamModel
     .findById(req.params.id)
-    .then((item) => {
-      res.status(200).json(item);
+    .populate("Sport Club Player")
+    .then((team) => {
+      res.status(200).json(team);
     })
     .catch((err) => {
       res.status(500).json(err);
