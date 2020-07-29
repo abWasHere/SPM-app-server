@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
   title: { type: String, required: true },
   date: { type: Date, required: true },
-  image: { type: String, default: URL("../public/images/eyes.png") },
+  image: { type: String, default: "../public/images/eyes.png" },
   address: {
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },

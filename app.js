@@ -43,7 +43,7 @@ app.use(function (req, res, next) {
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
 const clubRouter = require("./routes/club");
-const playerRouter = require("./routes/player"); 
+const playerRouter = require("./routes/player");
 const teamRouter = require("./routes/team");
 const eventRouter = require("./routes/event");
 
