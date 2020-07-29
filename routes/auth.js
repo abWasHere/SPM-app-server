@@ -6,6 +6,10 @@ const playerModel = require("../models/Player.js");
 
 const salt = 10;
 
+//  --------------------------------------
+// ROUTES PREFIX IS    /api/auth
+//  --------------------------------------
+
 // CLUB SIGN IN
 router.post("/signin/club", (req, res, next) => {
 	const { email, password } = req.body;

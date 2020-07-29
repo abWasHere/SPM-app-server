@@ -46,6 +46,7 @@ const clubRouter = require("./routes/club");
 const playerRouter = require("./routes/player");
 const teamRouter = require("./routes/team");
 const eventRouter = require("./routes/event");
+const accountRouter = require("./routes/account");
 
 app.use("/", indexRouter);
 app.use("/api/auth", authRouter);
@@ -53,6 +54,7 @@ app.use("/api/club", clubRouter);
 app.use("/api/player", playerRouter);
 app.use("/api/team", teamRouter);
 app.use("/api/event", eventRouter);
+app.use("/api/account", accountRouter);
 
 // 404 Middleware
 app.use((req, res, next) => {

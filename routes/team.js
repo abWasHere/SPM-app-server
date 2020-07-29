@@ -2,6 +2,11 @@ const express = require("express");
 const router = express.Router();
 const teamModel = require("./../models/Player.js");
 
+//  --------------------------------------
+// ROUTES PREFIX IS    /api/team
+//  --------------------------------------
+
+
 router.get("/", function (req, res, next) {
 	teamModel
 		.find()
