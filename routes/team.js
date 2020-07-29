@@ -6,14 +6,82 @@ const teamModel = require("./../models/Player.js");
 // ROUTES PREFIX IS    /api/team
 //  --------------------------------------
 
-
 router.get("/", function (req, res, next) {
-	teamModel
-		.find()
-		.then((dbResTeam) => {
-			res.status(200).json(dbResTeam);
-		})
-		.catch(next);
+  teamModel
+    .find()
+    .then((dbResTeam) => {
+      res.status(200).json(dbResTeam);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+// router.get("/:query", function (req, res, next) {
+// 	const query = req.params.query;
+// 	teamModel
+// 	  .find(query)
+// 	  .then((dbResTeam) => {
+// 		res.status(200).json(dbResTeam);
+// 	  })
+// 	  .catch((err) => {
+// 		res.status(500).json(err);
+// 	  });
+//   });
+
+router.get("/:id", (req, res) => {
+  teamModel
+    .findById(req.params.id)
+    .then((item) => {
+      res.status(200).json(item);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.post("/", fileUpload.single("image"), (req, res) => {
+  const newTeam = { ...req.body, club: req.session.currentUser._id };
+  //console.log(newTeam);
+  if (req.file) {
+    console.log(req.file);
+    newItem.image = req.file.path;
+  }
+  teamModel
+    .create(newTeam)
+    .then((team) => {
+      res.status(201).json(team);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.patch("/:id", fileUpload.single("image"), (req, res) => {
+  const updatedTeam = { ...req.body };
+  if (req.file) {
+    console.log(req.file);
+    updatedTeam.image = req.file.path;
+  }
+  teamModel
+    .findByIdAndUpdate(req.params.id, updatedTeam, { new: true })
+    .then((updatedTeam) => {
+      res.status(200).json(updatedTeam);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+router.delete("/:id", (req, res) => {
+  teamModel
+    .findByIdAndDelete(req.params.id)
+    .then(() => {
+      res.sendStatus(204);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;
