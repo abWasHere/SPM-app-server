@@ -7,7 +7,7 @@ const uploader = require("./../config/cloudinary");
 // ROUTES PREFIX IS    /api/event
 //  --------------------------------------
 
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
   eventModel
     .find()
     .populate("Sport Club")
@@ -61,19 +61,19 @@ router.post("/", uploader.single("image"), (req, res) => {
 });
 
 router.patch("/:id", uploader.single("image"), (req, res) => {
-	const updatedEvent = { ...req.body };
-	if (req.file) {
-		console.log(req.file);
-		updatedTeam.image = req.file.path;
-	}
-	eventModel
-		.findByIdAndUpdate(req.params.id, updatedEvent, { new: true })
-		.then((updatedEvent) => {
-			res.status(200).json(updatedEvent);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
+  const updatedEvent = { ...req.body };
+  if (req.file) {
+    console.log(req.file);
+    updatedEvent.image = req.file.path;
+  }
+  eventModel
+    .findByIdAndUpdate(req.params.id, updatedEvent, { new: true })
+    .then((event) => {
+      res.status(200).json(event);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 router.delete("/:id", (req, res) => {

@@ -9,56 +9,60 @@ const uploader = require("./../config/cloudinary");
 
 // GET ALL CLUBS
 
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
   clubModel
     .find()
-    // .select(-password)
+    .select("-password")
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
-    .catch(next);
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // CLUB GET INFOS
 
-router.get("/:id", (req, res, next) => {
+router.get("/:id", (req, res) => {
   clubModel
     .findById(req.params.id)
-    .select(-password)
-    .populate("Player Club")
+    .select("-password")
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
-    .catch(next);
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // CLUB EDIT ACCOUNT
 
-router.patch("/edit/:id", uploader.single("image"), (req, res, next) => {
+router.patch("/:id", uploader.single("image"), (req, res) => {
   const updatedInfos = req.body;
 
   if (req.file) updatedInfos.image = req.file.path;
 
   clubModel
     .findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
-    .select(-password)
     .then((updatedUser) => {
       res.status(200).json(updatedUser);
     })
-    .catch(next);
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // CLUB DELETE ACCOUNT
 // TODO: display confirmation pop up on the front end before getting to this route
 
-router.post("/delete/:id", (req, res, next) => {
+router.post("/:id", (req, res) => {
   clubModel
     .findByIdAndRemove(req.params.id)
     .then(() => {
       res.sendStatus(204);
     })
     .catch((err) => {
-      res.sendStatus(500);
+      res.status(500).json(err);
     });
 });
 

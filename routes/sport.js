@@ -9,12 +9,14 @@ const sportModel = require("./../models/Sport.js");
 // SPORT GET ALL
 
 router.get("/", (req, res, next) => {
-	sportModel
-		.find()
-		.then((dbRes) => {
-			res.status(200).json(dbRes);
-		})
-		.catch(next);
+  sportModel
+    .find()
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 module.exports = router;

@@ -10,7 +10,7 @@ const playerSchema = new Schema({
   city: {
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },
-    formattedPlace: String, // /!\ vérifier le nom de ce champs
+    formattedPlace: String,
   },
   practice: [
     {
