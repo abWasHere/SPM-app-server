@@ -8,7 +8,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.371699542296824, 48.78592072418809],
-      formattedPlace: "Place Paul Eluard, 94800 Villejuif, France",
+      formattedAddress: "Place Paul Eluard, 94800 Villejuif, France",
     },
     minAge: 15,
     sport: "Boxe",
@@ -36,7 +36,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.4514482711642813, 48.88727983601035],
-      formattedPlace: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
+      formattedAddress: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
     },
     minAge: 16,
     year: "2005",
@@ -68,7 +68,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
-      formattedPlace: "19 Rue Corvisart, 75013 Paris, France",
+      formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
     },
     minAge: 18,
     sport: "Futsal",
@@ -90,7 +90,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
-      formattedPlace: "19 Rue Corvisart, 75013 Paris, France",
+      formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
     },
     minAge: 18,
     sport: "Futsal",
@@ -113,7 +113,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
-      formattedPlace: "19 Rue Corvisart, 75013 Paris, France",
+      formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
     },
     minAge: 6,
     minAge: 12,
@@ -136,7 +136,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.362267271138876, 48.86414000000147],
-      formattedPlace: "5 Rue Neuve Saint-Pierre, 75004 Paris, France",
+      formattedAddress: "5 Rue Neuve Saint-Pierre, 75004 Paris, France",
     },
     minAge: 16,
     sport: "Basket-ball",
@@ -163,7 +163,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.382464728816899, 48.85586394090353],
-      formattedPlace: "2 Rue Japy, 75011 Paris, France",
+      formattedAddress: "2 Rue Japy, 75011 Paris, France",
     },
     minAge: 18,
     sport: "Futsal",
@@ -192,7 +192,7 @@ const teamsList = [
     address: {
       type: "Point",
       coordinates: [2.459072965088808, 48.81741375586395],
-      formattedPlace: "12 Avenue Des Canadiens, 94410 Saint-Maurice, France",
+      formattedAddress: "12 Avenue Des Canadiens, 94410 Saint-Maurice, France",
     },
     minAge: 18,
     sport: "Football",

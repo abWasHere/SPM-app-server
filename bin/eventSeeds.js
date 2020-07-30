@@ -7,7 +7,7 @@ const eventsList = [
     address: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
-      formattedPlace: "19 Rue Corvisart, 75013 Paris, France",
+      formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
     },
     description:
       "VENEZ NOMBREUSES ! 🤩 Recrutement ouvert pour nos deux équipes compétitives ainsi que la section loisirs, pour la saison 2020-2021! 💪",
@@ -20,7 +20,7 @@ const eventsList = [
     address: {
       type: "Point",
       coordinates: [2.4514482711642813, 48.88727983601035],
-      formattedPlace: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
+      formattedAddress: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
     },
     description:
       "Quelque soit votre niveau, venez jouez à l'ultimate, seule ou avec vos copines. Les équipes du tournoi seront tirées au sort pour permettre un tournoi équilibré !",

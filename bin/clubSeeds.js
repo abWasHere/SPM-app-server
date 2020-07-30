@@ -8,7 +8,7 @@ const clubsList = [
     address: {
       type: "Point",
       coordinates: [2.371699542296824, 48.78592072418809],
-      formattedPlace: "Place Paul Eluard, 94800 Villejuif, France",
+      formattedAddress: "Place Paul Eluard, 94800 Villejuif, France",
     },
     phoneNumber: "06 48 25 66 50",
     website: "http://usvkickboxing.com/v2/",
@@ -29,7 +29,7 @@ const clubsList = [
     address: {
       type: "Point",
       coordinates: [2.4514482711642813, 48.88727983601035],
-      formattedPlace: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
+      formattedAddress: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
     },
     website: "http://www.iznogood-ultimate.fr/",
     year: "1986",
@@ -47,7 +47,7 @@ const clubsList = [
     address: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
-      formattedPlace: "19 Rue Corvisart, 75013 Paris, France",
+      formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
     },
     phoneNumber: "0659227833",
     website: "http://parisfemininfc.fr/",
@@ -66,7 +66,7 @@ const clubsList = [
     address: {
       type: "Point",
       coordinates: [2.362267271138876, 48.86414000000147],
-      formattedPlace: "5 Rue Perrée, 75003 Paris, France",
+      formattedAddress: "5 Rue Perrée, 75003 Paris, France",
     },
     phoneNumber: "0771269000",
     website: "https://www.vikingclubparis.org/",
