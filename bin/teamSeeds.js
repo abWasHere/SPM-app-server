@@ -74,6 +74,7 @@ const teamsList = [
     sport: "Futsal",
     division: "Régionale",
     practice: "compétition",
+    registeredPlayers: [],
     trainings: [
       {
         day: "dimanche",
@@ -95,6 +96,7 @@ const teamsList = [
     sport: "Futsal",
     division: "Régionale",
     practice: "compétition",
+    registeredPlayers: [],
     trainings: [
       {
         day: "dimanche",
@@ -117,6 +119,7 @@ const teamsList = [
     minAge: 12,
     sport: "Futsal",
     practice: "loisir",
+    registeredPlayers: [],
     trainings: [
       {
         day: "samedi",
@@ -138,6 +141,7 @@ const teamsList = [
     minAge: 16,
     sport: "Basket-ball",
     practice: "loisir",
+    registeredPlayers: [],
     trainings: [
       {
         day: "lundi",
@@ -166,6 +170,7 @@ const teamsList = [
     description:
       "Matchs les week-ends de 16h00 à 18h00 (hors vacances scolaires).",
     practice: "compétition",
+    registeredPlayers: [],
     trainings: [
       {
         day: "lundi",
@@ -192,6 +197,7 @@ const teamsList = [
     minAge: 18,
     sport: "Football",
     practice: "loisir",
+    registeredPlayers: [],
     trainings: [
       {
         day: "mardi",

@@ -1,7 +1,7 @@
 const eventsList = [
   {
     title: "Séance d'essai",
-    date: "23/08/2020",
+    date: "2020-08-23",
     image:
       "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/s1080x2048/105901416_10158763684513083_4673726966580597882_o.jpg?_nc_cat=101&_nc_sid=730e14&_nc_ohc=zH4TIQFTnDcAX-KGXwU&_nc_ht=scontent-cdt1-1.xx&_nc_tp=7&oh=aa467734707624a2339e6af0699c04a6&oe=5F48F2AA",
     address: {
@@ -16,7 +16,7 @@ const eventsList = [
   },
   {
     title: "Tournoi Hat féminin",
-    date: "05/09/2020",
+    date: "2020-09-05",
     address: {
       type: "Point",
       coordinates: [2.4514482711642813, 48.88727983601035],

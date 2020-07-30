@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
-  title: { type: String, required: true },
-  date: { type: Date, required: true },
+  title: { type: String },
+  date: { type: Date },
   image: { type: String, default: "../public/images/eyes.png" },
   address: {
     type: { type: String, enum: ["Point"] },

@@ -9,12 +9,12 @@ const playersList = [
       coordinates: [2.3612091604104535, 48.79387197078859],
       formattedPlace: "Villejuif, Val-de-Marne, France",
     },
-    pratice: {
+    practice: {
       sport: "Boxe",
       level: "expérimentée",
     },
     description:
-      "Je me suis mis à la boxe il y a quelques années et j'adore ça !",
+      "Je me suis mise à la boxe il n'y a pas si longtemps mais j'adore ça !",
     role: "Player",
   },
   {
@@ -27,7 +27,7 @@ const playersList = [
       coordinates: [2.352273820640562, 48.85664221136983],
       formattedPlace: "Paris, France",
     },
-    pratice: {
+    practice: {
       sport: "Ultimate",
       level: "expérimentée",
     },
@@ -45,7 +45,7 @@ const playersList = [
       coordinates: [2.439252372627493, 48.847664962616534],
       formattedPlace: "Vincennes, Val-de-Marne, France",
     },
-    pratice: {
+    practice: {
       sport: "Basket-ball",
       level: "intermédiaire",
     },
@@ -63,7 +63,7 @@ const playersList = [
       coordinates: [2.2693524386621675, 48.82299341586125],
       formattedPlace: "Issy-les-Moulineaux, Hauts-de-Seine, France",
     },
-    pratice: {
+    practice: {
       sport: "Football",
       level: "débutante",
     },
