@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const eventModel = require("./../models/Event.js");
+const uploader = require("./../config/cloudinary");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/event
@@ -42,7 +43,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", fileUpload.single("image"), (req, res) => {
+router.post("/", uploader.single("image"), (req, res) => {
   const newEvent = { ...req.body, owner: req.session.currentUser._id };
   //console.log(newEvent);
   if (req.file) {
@@ -59,20 +60,20 @@ router.post("/", fileUpload.single("image"), (req, res) => {
     });
 });
 
-router.patch("/:id", fileUpload.single("image"), (req, res) => {
-  const updatedEvent = { ...req.body };
-  if (req.file) {
-    console.log(req.file);
-    updatedTeam.image = req.file.path;
-  }
-  eventModel
-    .findByIdAndUpdate(req.params.id, updatedEvent, { new: true })
-    .then((updatedEvent) => {
-      res.status(200).json(updatedEvent);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+router.patch("/:id", uploader.single("image"), (req, res) => {
+	const updatedEvent = { ...req.body };
+	if (req.file) {
+		console.log(req.file);
+		updatedTeam.image = req.file.path;
+	}
+	eventModel
+		.findByIdAndUpdate(req.params.id, updatedEvent, { new: true })
+		.then((updatedEvent) => {
+			res.status(200).json(updatedEvent);
+		})
+		.catch((err) => {
+			res.status(500).json(err);
+		});
 });
 
 router.delete("/:id", (req, res) => {

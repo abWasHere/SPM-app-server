@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const clubModel = require("../models/Club.js");
 const playerModel = require("../models/Player.js");
+const uploader = require("./../config/cloudinary");
 
 const salt = 10;
 
@@ -47,18 +48,21 @@ router.post("/signin/player", (req, res, next) => {
 });
 
 // CLUB SIGN UP
-router.post("/signup/club", (req, res, next) => {
+router.post("/signup/club", uploader.single("image"), (req, res, next) => {
 	const {
 		role,
 		email,
 		clubName,
 		address,
 		phoneNumber,
+		image,
 		website,
 		foundedYear,
 		description,
 		password,
 	} = req.body;
+
+	if (req.file) image = req.file.path;
 
 	clubModel.findOne({ email }).then((clubDocument) => {
 		if (clubDocument) {
@@ -72,6 +76,7 @@ router.post("/signup/club", (req, res, next) => {
 			clubName,
 			address,
 			phoneNumber,
+			image,
 			website,
 			foundedYear,
 			description,
@@ -88,17 +93,20 @@ router.post("/signup/club", (req, res, next) => {
 });
 
 // PLAYER SIGN UP
-router.post("/signup/player", (req, res, next) => {
+router.post("/signup/player", uploader.single("picture"), (req, res, next) => {
 	const {
 		role,
 		email,
 		firstName,
 		lastName,
 		city,
+		picture,
 		practice,
 		description,
 		password,
 	} = req.body;
+	
+	if (req.file) picture = req.file.path;
 
 	playerModel
 		.findOne({ email })
@@ -115,6 +123,7 @@ router.post("/signup/player", (req, res, next) => {
 				firstName,
 				lastName,
 				city,
+				picture,
 				practice,
 				description,
 				password: hashedPassword,
@@ -129,6 +138,8 @@ router.post("/signup/player", (req, res, next) => {
 		});
 });
 
+// USER IS LOGGED IN
+
 router.get("/isLoggedIn", (req, res, next) => {
 	if (req.session.currentUser) {
 		res.status(200).json(req.session.currentUser);
@@ -136,6 +147,8 @@ router.get("/isLoggedIn", (req, res, next) => {
 		res.status(401).json({ message: "Unauthorized" });
 	}
 });
+
+// USER LOG OUT
 
 router.get("/logout", (req, res, next) => {
 	req.session.destroy(function (error) {
