@@ -10,6 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+const devMode = true; // DEV MODE to change when needed
 
 /**
  * Middlewares
@@ -22,18 +23,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(
-  session({
-    store: new MongoStore({ mongooseConnection: mongoose.connection }), // Persist session in database.
-    secret: process.env.SESSION_SECRET,
-    resave: true,
-    saveUninitialized: true,
-  })
+	session({
+		store: new MongoStore({ mongooseConnection: mongoose.connection }), // Persist session in database.
+		secret: process.env.SESSION_SECRET,
+		resave: true,
+		saveUninitialized: true,
+	})
 );
+
+if (devMode === true) {
+	app.use(require("./middlewares/devMode"));
+}
 
 // Test to see if user is logged In before getting into any router.
 app.use(function (req, res, next) {
-  console.log(req.session.currentUser);
-  next();
+	console.log("current user in session : ", req.session.currentUser);
+	next();
 });
 
 /**
@@ -58,9 +63,9 @@ app.use("/api/sport", sportRouter);
 
 // 404 Middleware
 app.use((req, res, next) => {
-  const error = new Error("Ressource not found.");
-  error.status = 404;
-  next(err);
+	const error = new Error("Ressource not found.");
+	error.status = 404;
+	next(err);
 });
 
 // Error handler middleware
@@ -68,11 +73,11 @@ app.use((req, res, next) => {
 // You will end up in this middleware
 // next("toto") makes you end up here
 app.use((err, req, res, next) => {
-  console.log("An error occured");
-  res.status(err.status || 500);
-  if (!res.headersSent) {
-    res.json(err);
-  }
+	console.log("An error occured");
+	res.status(err.status || 500);
+	if (!res.headersSent) {
+		res.json(err);
+	}
 });
 
 module.exports = app;
