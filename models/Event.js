@@ -9,7 +9,6 @@ const eventSchema = new Schema({
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },
     formattedAddress: String,
-    required: true,
   },
   description: String,
   sport: {
