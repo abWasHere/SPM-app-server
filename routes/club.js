@@ -11,8 +11,8 @@ const uploader = require("./../config/cloudinary");
 
 router.get("/", (req, res, next) => {
   clubModel
-    .findById(req.params.id)
-    .select(-password)
+    .find()
+    // .select(-password)
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
