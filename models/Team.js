@@ -9,7 +9,8 @@ const teamSchema = new Schema({
   },
   coachName: String,
   image: { type: String, default: "../public/images/squiggles.png" },
-  address: {
+  address: { type: String },
+  location: {
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },
     formattedAddress: String,

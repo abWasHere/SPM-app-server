@@ -6,7 +6,8 @@ const clubSchema = new Schema({
   password: { type: String, required: true },
   clubName: { type: String, required: true },
   image: { type: String, default: "../public/images/happy-bunch.png" },
-  address: {
+  address: { type: String },
+  location: {
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },
     formattedAddress: String,

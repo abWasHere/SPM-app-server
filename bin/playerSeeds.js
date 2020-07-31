@@ -4,7 +4,7 @@ const playersList = [
     password: "1234",
     firstName: "Audrey",
     lastName: "Belson",
-    city: {
+    location: {
       type: "Point",
       coordinates: [2.3612091604104535, 48.79387197078859],
       formattedPlace: "Villejuif, Val-de-Marne, France",
@@ -22,7 +22,7 @@ const playersList = [
     password: "1234",
     firstName: "Aude",
     lastName: "Richon",
-    city: {
+    location: {
       type: "Point",
       coordinates: [2.352273820640562, 48.85664221136983],
       formattedPlace: "Paris, France",
@@ -40,7 +40,7 @@ const playersList = [
     password: "1234",
     firstName: "Claire",
     lastName: "Roche",
-    city: {
+    location: {
       type: "Point",
       coordinates: [2.439252372627493, 48.847664962616534],
       formattedPlace: "Vincennes, Val-de-Marne, France",
@@ -58,7 +58,7 @@ const playersList = [
     password: "1234",
     firstName: "Mélanie",
     lastName: "Ambar",
-    city: {
+    location: {
       type: "Point",
       coordinates: [2.2693524386621675, 48.82299341586125],
       formattedPlace: "Issy-les-Moulineaux, Hauts-de-Seine, France",

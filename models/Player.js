@@ -7,7 +7,8 @@ const playerSchema = new Schema({
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   picture: { type: String, default: "../public/images/open-figures.png" },
-  city: {
+  place: { type: String }, // /!/ nom du champs à vérifier
+  location: {
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },
     formattedPlace: String,

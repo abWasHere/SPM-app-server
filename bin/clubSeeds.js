@@ -5,7 +5,7 @@ const clubsList = [
     clubName: "Académie de boxes de Villejuif",
     image:
       "http://usvkickboxing.com/v2/wp-content/uploads/2016/11/logo-Nov-YEUIR.png",
-    address: {
+    location: {
       type: "Point",
       coordinates: [2.371699542296824, 48.78592072418809],
       formattedAddress: "Place Paul Eluard, 94800 Villejuif, France",
@@ -26,7 +26,7 @@ const clubsList = [
     clubName: "Iznogood",
     image:
       "http://www.iznogood-ultimate.fr/wp-content/uploads/2017/09/cropped-izno-club-ultimate-frisbee-nois%C3%A9en.png",
-    address: {
+    location: {
       type: "Point",
       coordinates: [2.4514482711642813, 48.88727983601035],
       formattedAddress: "2 Rue Jules Auffret, 93130 Noisy-le-Sec, France",
@@ -44,7 +44,7 @@ const clubsList = [
     clubName: "Paris Féminin Football Club",
     image:
       "http://parisfemininfc.fr/wp-content/uploads/2020/02/LOGO-PARIS-FFC2-570.png",
-    address: {
+    location: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
       formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
@@ -63,7 +63,7 @@ const clubsList = [
     clubName: "Viking Club Paris",
     image:
       "https://www.vikingclubparis.org/wp-content/uploads/2020/02/LOGO.png",
-    address: {
+    location: {
       type: "Point",
       coordinates: [2.362267271138876, 48.86414000000147],
       formattedAddress: "5 Rue Perrée, 75003 Paris, France",
