@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const clubModel = require("../models/Club.js");
 const playerModel = require("../models/Player.js");
-const uploader = require("./../config/cloudinary");
+const fileUploader = require("./../config/cloudinary");
 
 const salt = 10;
 
@@ -48,48 +48,23 @@ router.post("/signin/player", (req, res, next) => {
 });
 
 // CLUB SIGN UP
-router.post("/signup/club", uploader.single("image"), (req, res, next) => {
-  const {
-    role,
-    email,
-    clubName,
-    address,
-    phoneNumber,
-    image,
-    website,
-    videoURL,
-    year,
-    subscriptionFee,
-    description,
-    password,
-  } = req.body;
+router.post("/signup/club", fileUploader.single("image"), (req, res, next) => {
+  const newClub = { ...req.body };
 
-  if (req.file) image = req.file.path;
+  if (req.file) {
+    newClub.image = req.file.path;
+  }
 
   clubModel
-    .findOne({ email })
+    .findOne({ email: newClub.email })
     .then((clubDocument) => {
       if (clubDocument) {
         return res.status(400).json({ message: "Email already taken" });
       }
 
       try {
-        const hashedPassword = bcrypt.hashSync(password, salt);
-
-        const newClub = {
-          role,
-          email,
-          clubName,
-          address,
-          phoneNumber,
-          image,
-          website,
-          videoURL,
-          year,
-          subscriptionFee,
-          description,
-          password: hashedPassword,
-        };
+        const hashedPassword = bcrypt.hashSync(newClub.password, salt);
+        newClub.password = hashedPassword;
 
         clubModel.create(newClub).then((newClubDocument) => {
           const clubObj = newClubDocument.toObject();
@@ -107,57 +82,40 @@ router.post("/signup/club", uploader.single("image"), (req, res, next) => {
 });
 
 // PLAYER SIGN UP
-router.post("/signup/player", uploader.single("picture"), (req, res, next) => {
-  const {
-    role,
-    email,
-    firstName,
-    lastName,
-    city,
-    picture,
-    practice,
-    description,
-    password,
-  } = req.body;
+router.post(
+  "/signup/player",
+  fileUploader.single("picture"),
+  (req, res, next) => {
+    const newPlayer = { ...req.body };
 
-  if (req.file) picture = req.file.path;
+    if (req.file) picture = req.file.path;
 
-  playerModel
-    .findOne({ email })
-    .then((playerDocument) => {
-      if (playerDocument) {
-        return res.status(400).json({ message: "Email already taken" });
-      }
+    playerModel
+      .findOne({ email: newPlayer.email })
+      .then((playerDocument) => {
+        if (playerDocument) {
+          return res.status(400).json({ message: "Email already taken" });
+        }
 
-      try {
-        const hashedPassword = bcrypt.hashSync(password, salt);
+        try {
+          const hashedPassword = bcrypt.hashSync(newPlayer.password, salt);
+          newPlayer.password = hashedPassword;
 
-        const newPlayer = {
-          role,
-          email,
-          firstName,
-          lastName,
-          city,
-          picture,
-          practice,
-          description,
-          password: hashedPassword,
-        };
-
-        playerModel.create(newPlayer).then((newPlayerDocument) => {
-          const playerObj = newPlayerDocument.toObject();
-          delete playerObj.password;
-          req.session.currentUser = playerObj;
-          res.status(201).json(playerObj);
-        });
-      } catch (err) {
+          playerModel.create(newPlayer).then((newPlayerDocument) => {
+            const playerObj = newPlayerDocument.toObject();
+            delete playerObj.password;
+            req.session.currentUser = playerObj;
+            res.status(201).json(playerObj);
+          });
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      })
+      .catch((err) => {
         res.status(500).json(err);
-      }
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
-});
+      });
+  }
+);
 
 // USER IS LOGGED IN
 
