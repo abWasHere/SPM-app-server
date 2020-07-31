@@ -87,7 +87,7 @@ const teamsList = [
     teamName: "Seniors 2",
     club: "Paris Féminin Football Club",
     coachName: "Filipe Dos Santos",
-    address: {
+    location: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
       formattedAddress: "19 Rue Corvisart, 75013 Paris, France",
