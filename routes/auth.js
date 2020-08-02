@@ -100,7 +100,10 @@ router.post(
         try {
           const hashedPassword = bcrypt.hashSync(newPlayer.password, salt);
           newPlayer.password = hashedPassword;
+          newPlayer.practice[0].sport = newPlayer.sport;
+          newPlayer.practice[0].level = newPlayer.level;
 
+          console.log("==========newPlayer", newPlayer);
           playerModel.create(newPlayer).then((newPlayerDocument) => {
             const playerObj = newPlayerDocument.toObject();
             delete playerObj.password;
@@ -108,6 +111,7 @@ router.post(
             res.status(201).json(playerObj);
           });
         } catch (err) {
+          console.log(err);
           res.status(500).json(err);
         }
       })
