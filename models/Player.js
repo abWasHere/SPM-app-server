@@ -6,7 +6,7 @@ const playerSchema = new Schema({
   password: { type: String, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
-  picture: { type: String, default: "../public/images/open-figures.png" },
+  picture: { type: String, default: "../images/open-figures.png" },
   address: { type: String },
   location: {
     type: { type: String, enum: ["Point"] },

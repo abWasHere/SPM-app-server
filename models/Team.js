@@ -8,7 +8,7 @@ const teamSchema = new Schema({
     ref: "Club",
   },
   coachName: String,
-  image: { type: String, default: "../public/images/squiggles.png" },
+  image: { type: String, default: "../images/squiggles.png" },
   address: { type: String },
   location: {
     type: { type: String, enum: ["Point"] },

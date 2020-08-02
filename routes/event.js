@@ -56,7 +56,6 @@ router.post("/", fileUploader.single("image"), (req, res) => {
       res.status(201).json(event);
     })
     .catch((err) => {
-      console.log(err);
       res.status(500).json(err);
     });
 });
