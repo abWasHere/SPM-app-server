@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const eventModel = require("./../models/Event.js");
-const uploader = require("./../config/cloudinary");
+const fileUploader = require("./../config/cloudinary");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/event
@@ -43,7 +43,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", uploader.single("image"), (req, res) => {
+router.post("/", fileUploader.single("image"), (req, res) => {
   const newEvent = { ...req.body, owner: req.session.currentUser._id };
   //console.log(newEvent);
   if (req.file) {
@@ -56,11 +56,12 @@ router.post("/", uploader.single("image"), (req, res) => {
       res.status(201).json(event);
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.patch("/:id", uploader.single("image"), (req, res) => {
+router.patch("/:id", fileUploader.single("image"), (req, res) => {
   const updatedEvent = { ...req.body };
   if (req.file) {
     console.log(req.file);

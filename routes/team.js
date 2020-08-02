@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const teamModel = require("./../models/Team.js");
-const uploader = require("./../config/cloudinary");
+const fileUploader = require("./../config/cloudinary");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/team
@@ -43,7 +43,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", uploader.single("image"), (req, res) => {
+router.post("/", fileUploader.single("image"), (req, res) => {
   const newTeam = { ...req.body, club: req.session.currentUser._id };
   //console.log(newTeam);
   if (req.file) {
@@ -56,11 +56,12 @@ router.post("/", uploader.single("image"), (req, res) => {
       res.status(201).json(team);
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });
 
-router.patch("/:id", uploader.single("image"), (req, res) => {
+router.patch("/:id", fileUploader.single("image"), (req, res) => {
   const updatedTeam = { ...req.body };
   if (req.file) {
     console.log(req.file);
