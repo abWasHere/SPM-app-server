@@ -11,15 +11,32 @@ const salt = 10;
 // ROUTES PREFIX IS    /api/auth
 //  --------------------------------------
 
-// CLUB SIGN IN
-router.post("/signin/club", (req, res, next) => {
+// SIGN IN ALL
+
+router.post("/signin", (req, res, next) => {
 	const { email, password } = req.body;
 	clubModel
 		.findOne({ email })
 		.then((userDocument) => {
 			if (!userDocument) {
-				return res.status(400).json({ message: "Invalid credentials" });
+				playerModel.findOne({ email }).then((userDocument) => {
+					if (!userDocument) {
+						return res.status(400).json({ message: "Invalid credentials" });
+					}
+					const isValidPassword = bcrypt.compareSync(
+						password,
+						userDocument.password
+					);
+					if (!isValidPassword) {
+						return res.status(400).json({ message: "Invalid credentials" });
+					}
+					const userObj = userDocument.toObject();
+					delete userObj.password;
+					req.session.currentUser = userObj;
+					res.status(200).json(userObj);
+				});
 			}
+			if(userDocument){
 			const isValidPassword = bcrypt.compareSync(
 				password,
 				userDocument.password
@@ -30,38 +47,13 @@ router.post("/signin/club", (req, res, next) => {
 			const userObj = userDocument.toObject();
 			delete userObj.password;
 			req.session.currentUser = userObj;
-			res.status(200).json(userObj);
+			res.status(200).json(userObj)}
 		})
 		.catch((err) => {
 			res.status(500).json(err);
 		});
 });
 
-// PLAYER SIGN IN
-router.post("/signin/player", (req, res, next) => {
-	const { email, password } = req.body;
-	playerModel
-		.findOne({ email })
-		.then((userDocument) => {
-			if (!userDocument) {
-				return res.status(400).json({ message: "Invalid credentials" });
-			}
-			const isValidPassword = bcrypt.compareSync(
-				password,
-				userDocument.password
-			);
-			if (!isValidPassword) {
-				return res.status(400).json({ message: "Invalid credentials" });
-			}
-			const userObj = userDocument.toObject();
-			delete userObj.password;
-			req.session.currentUser = userObj;
-			res.status(200).json(userObj);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
-});
 // CLUB SIGN UP
 router.post("/signup/club", fileUploader.single("image"), (req, res, next) => {
 	const newClub = { ...req.body };
