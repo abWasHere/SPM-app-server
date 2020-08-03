@@ -65,10 +65,10 @@ async function sendAllSeeds() {
 
       // find the club
       let filteredArray2 = cleanClubsList.filter((club) => {
-        return club.clubName === event.owner;
+        return club.clubName === event.club;
       });
       let id2 = filteredArray2[0]._id;
-      event.owner = id2;
+      event.club = id2;
     });
 
     const cleanEventsList = await eventModel.create(eventsList);

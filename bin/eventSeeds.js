@@ -13,7 +13,7 @@ const eventsList = [
     description:
       "VENEZ NOMBREUSES ! 🤩 Recrutement ouvert pour nos deux équipes compétitives ainsi que la section loisirs, pour la saison 2020-2021! 💪",
     sport: "Futsal",
-    owner: "Paris Féminin Football Club",
+    club: "Paris Féminin Football Club",
   },
   {
     title: "Tournoi Hat féminin",
@@ -27,7 +27,7 @@ const eventsList = [
     description:
       "Quelque soit votre niveau, venez jouez à l'ultimate, seule ou avec vos copines. Les équipes du tournoi seront tirées au sort pour permettre un tournoi équilibré !",
     sport: "Ultimate",
-    owner: "Iznogood",
+    club: "Iznogood",
   },
 ];
 

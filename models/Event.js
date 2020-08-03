@@ -18,7 +18,7 @@ const eventSchema = new Schema({
     ref: "Sport",
     required: true,
   },
-  owner: {
+  club: {
     type: Schema.Types.ObjectId,
     ref: "Club",
   },
