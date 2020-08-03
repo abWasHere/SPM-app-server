@@ -10,7 +10,7 @@ const fileUploader = require("./../config/cloudinary");
 router.get("/", function (req, res, next) {
   teamModel
     .find()
-    .populate("Sport Club")
+    .populate("sport club")
     .then((dbResTeam) => {
       res.status(200).json(dbResTeam);
     })
@@ -33,14 +33,14 @@ router.get("/", function (req, res, next) {
 
 router.get("/:id", (req, res) => {
   teamModel
-    .findById(req.params.id)
-    .populate("Sport Club Player")
-    .then((team) => {
-      res.status(200).json(team);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+		.findById(req.params.id)
+		.populate("sport club player")
+		.then((team) => {
+			res.status(200).json(team);
+		})
+		.catch((err) => {
+			res.status(500).json(err);
+		});
 });
 
 router.post("/", fileUploader.single("image"), (req, res) => {

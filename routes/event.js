@@ -9,14 +9,14 @@ const fileUploader = require("./../config/cloudinary");
 
 router.get("/", function (req, res) {
   eventModel
-    .find()
-    .populate("Sport Club")
-    .then((dbResEvent) => {
-      res.status(200).json(dbResEvent);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+		.find()
+		.populate("sport club")
+		.then((dbResEvent) => {
+			res.status(200).json(dbResEvent);
+		})
+		.catch((err) => {
+			res.status(500).json(err);
+		});
 });
 
 // router.get("/:query", function (req, res, next) {
@@ -33,14 +33,14 @@ router.get("/", function (req, res) {
 
 router.get("/:id", (req, res) => {
   eventModel
-    .findById(req.params.id)
-    .populate("Sport Club")
-    .then((event) => {
-      res.status(200).json(event);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+		.findById(req.params.id)
+		.populate("sport club")
+		.then((event) => {
+			res.status(200).json(event);
+		})
+		.catch((err) => {
+			res.status(500).json(err);
+		});
 });
 
 router.post("/", fileUploader.single("image"), (req, res) => {

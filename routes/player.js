@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   playerModel
     .find()
     .select("-password")
-    .populate("Sport")
+    .populate("sport")
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
   playerModel
     .findById(req.params.id)
     .select("-password")
-    .populate("Sport")
+    .populate("sport")
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
