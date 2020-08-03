@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
   playerModel
     .find()
     .select("-password")
-    .populate("sport")
+    .populate({ path: "practice", populate: { path: "sport" } })
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
