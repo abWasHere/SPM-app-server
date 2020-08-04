@@ -37,6 +37,32 @@ router.get("/:id", (req, res) => {
     });
 });
 
+// CLUB GET OWNED TEAMS
+
+router.get("/teams-of/:clubID", (req, res) => {
+  teamModel
+    .find({club: req.params.clubID})
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+// CLUB GET OWNED EVENTS
+
+router.get("/events-of/:clubID", (req, res) => {
+  eventModel
+    .find({club: req.params.clubID})
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 // CLUB EDIT ACCOUNT
 
 router.patch("/:id", uploader.single("image"), (req, res) => {
