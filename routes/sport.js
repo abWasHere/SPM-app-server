@@ -11,6 +11,7 @@ const sportModel = require("./../models/Sport.js");
 router.get("/", (req, res, next) => {
   sportModel
     .find()
+    .sort({ sportName: 1 })
     .then((dbRes) => {
       res.status(200).json(dbRes);
     })
