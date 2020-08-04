@@ -11,30 +11,42 @@ const uploader = require("./../config/cloudinary");
 
 router.get("/", (req, res) => {
   playerModel
-    .find()
-    .select("-password")
-    .populate({ path: "practice", populate: { path: "sport" } })
-    .then((dbRes) => {
-      res.status(200).json(dbRes);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+		.find()
+		.select("-password")
+		.populate({
+			path: "practice",
+			populate: {
+				path: "sport",
+				model: "Sport",
+			},
+		})
+		.then((dbRes) => {
+			res.status(200).json(dbRes);
+		})
+		.catch((err) => {
+			res.status(500).json(err);
+		});
 });
 
 // PLAYER GET INFOS
 
 router.get("/:id", (req, res) => {
   playerModel
-    .findById(req.params.id)
-    .select("-password")
-    .populate("sport")
-    .then((dbRes) => {
-      res.status(200).json(dbRes);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+		.findById(req.params.id)
+		.select("-password")
+		.populate({
+			path: "practice",
+			populate: {
+				path: "sport",
+				model: "Sport",
+			},
+		})
+		.then((dbRes) => {
+			res.status(200).json(dbRes);
+		})
+		.catch((err) => {
+			res.status(500).json(err);
+		});
 });
 
 // PLAYER EDIT ACCOUNT
