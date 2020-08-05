@@ -82,6 +82,7 @@ router.patch("/:id", uploader.single("image"), (req, res) => {
 	clubModel
 		.findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
 		.then((updatedUser) => {
+			req.session.currentUser = updatedUser;
 			res.status(200).json(updatedUser);
 		})
 		.catch((err) => {
