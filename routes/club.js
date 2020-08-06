@@ -4,6 +4,7 @@ const clubModel = require("./../models/Club.js");
 const teamModel = require("./../models/Team.js");
 const eventModel = require("./../models/Event.js");
 const uploader = require("./../config/cloudinary");
+const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/club
@@ -25,7 +26,7 @@ router.get("/", (req, res) => {
 
 // CLUB GET INFOS
 
-router.get("/:id", (req, res) => {
+router.get("/:id", protectPrivateRoute, (req, res) => {
 	clubModel
 		.findById(req.params.id)
 		.select("-password")
@@ -74,26 +75,31 @@ router.get("/events-of/:clubID", (req, res) => {
 
 // CLUB EDIT ACCOUNT
 
-router.patch("/:id", uploader.single("image"), (req, res) => {
-	const updatedInfos = req.body;
+router.patch(
+	"/:id",
+	protectPrivateRoute,
+	uploader.single("image"),
+	(req, res) => {
+		const updatedInfos = req.body;
 
-	if (req.file) updatedInfos.image = req.file.path;
+		if (req.file) updatedInfos.image = req.file.path;
 
-	clubModel
-		.findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
-		.then((updatedUser) => {
-			req.session.currentUser = updatedUser;
-			res.status(200).json(updatedUser);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
-});
+		clubModel
+			.findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
+			.then((updatedUser) => {
+				req.session.currentUser = updatedUser;
+				res.status(200).json(updatedUser);
+			})
+			.catch((err) => {
+				res.status(500).json(err);
+			});
+	}
+);
 
 // CLUB DELETE ACCOUNT
 // TODO: display confirmation pop up on the front end before getting to this route
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", protectPrivateRoute, (req, res) => {
 	Promise.all([
 		teamModel
 			.deleteMany({ club: req.params.id })

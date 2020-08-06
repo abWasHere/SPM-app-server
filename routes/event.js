@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const eventModel = require("./../models/Event.js");
 const fileUploader = require("./../config/cloudinary");
+const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/event
@@ -45,7 +46,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-router.post("/", fileUploader.single("image"), (req, res) => {
+router.post("/", protectPrivateRoute, fileUploader.single("image"), (req, res) => {
   const newEvent = { ...req.body, club: req.session.currentUser._id };
   //console.log(newEvent);
   if (req.file) {
@@ -62,7 +63,7 @@ router.post("/", fileUploader.single("image"), (req, res) => {
     });
 });
 
-router.patch("/:id", fileUploader.single("image"), (req, res) => {
+router.patch("/:id", protectPrivateRoute, fileUploader.single("image"), (req, res) => {
   const updatedEvent = { ...req.body };
   if (req.file) {
     console.log(req.file);
@@ -78,7 +79,7 @@ router.patch("/:id", fileUploader.single("image"), (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", protectPrivateRoute, (req, res) => {
   eventModel
     .findByIdAndDelete(req.params.id)
     .then(() => {
