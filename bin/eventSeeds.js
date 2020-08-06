@@ -29,6 +29,20 @@ const eventsList = [
     sport: "Ultimate",
     club: "Iznogood",
   },
+  {
+    title: "Session de recrutement",
+    date: "2020-06-29",
+    time: "18h30",
+    location: {
+      type: "Point",
+      coordinates: [2.3683899999796267, 48.877413359864164],
+      formattedAddress: "17 Rue Boy-Żeleński, 75010 Paris, France",
+    },
+    description:
+      "Venez rencontrer les joueuses, tâter du ballon et faire votre place dans l'équipe pour la rentrée prochaine !",
+    sport: "Basket-ball",
+    club: "Viking Club Paris",
+  },
 ];
 
 module.exports = eventsList;

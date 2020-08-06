@@ -10,7 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
-const devMode = false; // DEV MODE to change when needed
+const devMode = true; // DEV MODE to change when needed
 
 /**
  * Middlewares
@@ -60,14 +60,12 @@ app.use("/api/team", teamRouter);
 app.use("/api/event", eventRouter);
 app.use("/api/sport", sportRouter);
 
-
 if (process.env.NODE_ENV === "production") {
-	app.use("*", (req, res, next) => {
-		// If no routes match, send them the React HTML.
-		res.sendFile(__dirname + "/public/index.html");
-	});
+  app.use("*", (req, res, next) => {
+    // If no routes match, send them the React HTML.
+    res.sendFile(__dirname + "/public/index.html");
+  });
 }
-
 
 // 404 Middleware
 app.use((req, res, next) => {

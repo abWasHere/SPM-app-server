@@ -8,8 +8,10 @@ const fileUploader = require("./../config/cloudinary");
 //  --------------------------------------
 
 router.get("/", function (req, res) {
+  let today = new Date();
   eventModel
-    .find()
+    .find({ date: { $gte: today } })
+    .sort({ date: 1 })
     .populate("sport club")
     .then((dbResEvent) => {
       res.status(200).json(dbResEvent);
