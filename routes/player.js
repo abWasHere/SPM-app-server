@@ -64,9 +64,9 @@ router.patch(
 		playerModel
 			.findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
 			.select("-password")
-			.then((user) => {
+			.then((updatedUser) => {
 				req.session.currentUser = updatedUser;
-				res.status(200).json(user);
+				res.status(200).json(updatedUser);
 			})
 			.catch((err) => {
 				res.status(500).json(err);
@@ -76,7 +76,7 @@ router.patch(
 
 // PLAYER DELETE ACCOUNT
 
-router.delete("/:id", protectPrivateRoute, (req, res) => {
+router.delete("/delete/:id", protectPrivateRoute, (req, res) => {
 	playerModel
 		.findByIdAndRemove(req.params.id)
 		.then(() => {

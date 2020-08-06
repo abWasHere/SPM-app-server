@@ -75,7 +75,7 @@ async function sendAllSeeds() {
     // console.log("CLEAN EVENTS LIST ========>", cleanEventsList);
 
     teamsList.forEach((team) => {
-      console.log("team is ___________________________", team.teamName);
+      // console.log("team is ___________________________", team.teamName);
       // find the sport
       let filteredArray1 = allSports.filter((sport) => {
         return sport.sportName === team.sport;
@@ -109,7 +109,7 @@ async function sendAllSeeds() {
     });
     const cleanTeamsList = await teamModel.create(teamsList);
 
-    console.log("CLEAN TEAMS LIST ========>", cleanTeamsList);
+    // console.log("CLEAN TEAMS LIST ========>", cleanTeamsList);
   } catch (error) {
     console.log(error);
   }
