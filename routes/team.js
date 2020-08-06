@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const teamModel = require("./../models/Team.js");
-const fileUploader = require("./../config/cloudinary");
+const teamModel = require("../models/Team.js");
+const fileUploader = require("../config/cloudinary");
 const Player = require("../models/Player");
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/team

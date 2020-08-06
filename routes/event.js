@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const eventModel = require("./../models/Event.js");
-const fileUploader = require("./../config/cloudinary");
+const eventModel = require("../models/Event.js");
+const fileUploader = require("../config/cloudinary");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/event

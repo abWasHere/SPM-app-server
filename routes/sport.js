@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const sportModel = require("./../models/Sport.js");
+const sportModel = require("../models/Sport.js");
 
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/sport
