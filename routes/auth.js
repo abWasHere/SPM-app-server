@@ -30,14 +30,14 @@ router.post("/signin", (req, res, next) => {
           })
           .then((userDocument) => {
             if (!userDocument) {
-              return res.status(400).json({ message: "Invalid credentials" });
+              return res.status(400).json({ message: "Identifiant invalide." });
             }
             const isValidPassword = bcrypt.compareSync(
               password,
               userDocument.password
             );
             if (!isValidPassword) {
-              return res.status(400).json({ message: "Invalid credentials" });
+              return res.status(400).json({ message: "Mot de passe erroné." });
             }
             const userObj = userDocument.toObject();
             delete userObj.password;
@@ -51,7 +51,7 @@ router.post("/signin", (req, res, next) => {
           userDocument.password
         );
         if (!isValidPassword) {
-          return res.status(400).json({ message: "Invalid credentials" });
+          return res.status(400).json({ message: "Mot de passe erroné." });
         }
         const userObj = userDocument.toObject();
         delete userObj.password;
