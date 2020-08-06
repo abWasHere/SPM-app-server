@@ -102,7 +102,7 @@ async function sendAllSeeds() {
             id3 = foundPlayer[0]._id;
           }
           if (id3) filteredArray3.push(id3);
-          console.log("filtered arr ========", filteredArray3);
+          //console.log("filtered arr ========", filteredArray3);
         });
       }
       team.registeredPlayers = filteredArray3;

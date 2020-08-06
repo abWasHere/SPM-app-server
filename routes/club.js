@@ -13,15 +13,15 @@ const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 // GET ALL CLUBS
 
 router.get("/", (req, res) => {
-	clubModel
-		.find()
-		.select("-password")
-		.then((dbRes) => {
-			res.status(200).json(dbRes);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
+  clubModel
+    .find()
+    .select("-password")
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // CLUB GET INFOS
@@ -41,36 +41,36 @@ router.get("/:id", protectPrivateRoute, (req, res) => {
 // CLUB GET OWNED TEAMS
 
 router.get("/teams-of/:clubID", (req, res) => {
-	teamModel
-		.find({ club: req.params.clubID })
-		.populate("sport club")
-		.populate({
-			path: "registeredPlayers",
-			populate: {
-				path: "player",
-				model: "Player",
-			},
-		})
-		.then((dbRes) => {
-			res.status(200).json(dbRes);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
+  teamModel
+    .find({ club: req.params.clubID })
+    .populate("sport club")
+    .populate({
+      path: "registeredPlayers",
+      populate: {
+        path: "player",
+        model: "Player",
+      },
+    })
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // CLUB GET OWNED EVENTS
 
 router.get("/events-of/:clubID", (req, res) => {
-	eventModel
-		.find({ club: req.params.clubID })
-		.populate("sport club")
-		.then((dbRes) => {
-			res.status(200).json(dbRes);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
+  eventModel
+    .find({ club: req.params.clubID })
+    .populate("sport club")
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // CLUB EDIT ACCOUNT
@@ -97,7 +97,6 @@ router.patch(
 );
 
 // CLUB DELETE ACCOUNT
-// TODO: display confirmation pop up on the front end before getting to this route
 
 router.delete("/:id", protectPrivateRoute, (req, res) => {
 	Promise.all([

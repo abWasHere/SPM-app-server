@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const clubModel = require("../models/Club.js");
 const playerModel = require("../models/Player.js");
-const fileUploader = require("./../config/cloudinary");
+const fileUploader = require("../config/cloudinary");
 
 const salt = 10;
 

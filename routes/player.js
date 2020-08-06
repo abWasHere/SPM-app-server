@@ -11,43 +11,43 @@ const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 // GET ALL PLAYERS
 
 router.get("/", (req, res) => {
-	playerModel
-		.find()
-		.select("-password")
-		.populate({
-			path: "practice",
-			populate: {
-				path: "sport",
-				model: "Sport",
-			},
-		})
-		.then((dbRes) => {
-			res.status(200).json(dbRes);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
+  playerModel
+    .find()
+    .select("-password")
+    .populate({
+      path: "practice",
+      populate: {
+        path: "sport",
+        model: "Sport",
+      },
+    })
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // PLAYER GET INFOS
 
 router.get("/:id", (req, res) => {
-	playerModel
-		.findById(req.params.id)
-		.select("-password")
-		.populate({
-			path: "practice",
-			populate: {
-				path: "sport",
-				model: "Sport",
-			},
-		})
-		.then((dbRes) => {
-			res.status(200).json(dbRes);
-		})
-		.catch((err) => {
-			res.status(500).json(err);
-		});
+  playerModel
+    .findById(req.params.id)
+    .select("-password")
+    .populate({
+      path: "practice",
+      populate: {
+        path: "sport",
+        model: "Sport",
+      },
+    })
+    .then((dbRes) => {
+      res.status(200).json(dbRes);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // PLAYER EDIT ACCOUNT
@@ -75,7 +75,6 @@ router.patch(
 );
 
 // PLAYER DELETE ACCOUNT
-// TODO: display confirmation pop up on the front end before getting to this route
 
 router.delete("/:id", protectPrivateRoute, (req, res) => {
 	playerModel
