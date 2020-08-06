@@ -53,13 +53,21 @@ const teamRouter = require("./routes/team");
 const eventRouter = require("./routes/event");
 const sportRouter = require("./routes/sport");
 
-app.use("/", indexRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/club", clubRouter);
 app.use("/api/player", playerRouter);
 app.use("/api/team", teamRouter);
 app.use("/api/event", eventRouter);
 app.use("/api/sport", sportRouter);
+
+
+if (process.env.NODE_ENV === "production") {
+	app.use("*", (req, res, next) => {
+		// If no routes match, send them the React HTML.
+		res.sendFile(__dirname + "/public/index.html");
+	});
+}
+
 
 // 404 Middleware
 app.use((req, res, next) => {
