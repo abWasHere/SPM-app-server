@@ -5,7 +5,7 @@ const eventSchema = new Schema({
   title: { type: String },
   date: { type: Date },
   time: { type: String },
-  image: { type: String, default: "../images/eyes.png" },
+  image: { type: String, default: "/images/eyes.png" },
   address: { type: String },
   location: {
     type: { type: String, enum: ["Point"] },

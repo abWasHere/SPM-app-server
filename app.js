@@ -10,7 +10,7 @@ const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
-const devMode = true; // DEV MODE to change when needed
+const devMode = false; // DEV MODE to change when needed
 
 /**
  * Middlewares

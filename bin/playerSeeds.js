@@ -72,7 +72,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
     email: "janedoe1@mail.com",
     password: "1234",
     firstName: "Jane",
@@ -90,7 +90,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
     email: "janedoe2@mail.com",
     password: "1234",
     firstName: "Janette",
@@ -108,7 +108,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
 
     email: "janedoe3@mail.com",
     password: "1234",
@@ -127,7 +127,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
 
     email: "janedoe4@mail.com",
     password: "1234",
@@ -146,7 +146,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
 
     email: "janedoe5@mail.com",
     password: "1234",
@@ -182,7 +182,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
 
     email: "janedoe7@mail.com",
     password: "1234",
@@ -252,7 +252,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
     email: "janedoe11@mail.com",
     password: "1234",
     firstName: "Coline",
@@ -270,7 +270,7 @@ const playersList = [
     role: "Player",
   },
   {
-    picture: "../images/humaaans.png",
+    picture: "/images/humaaans.png",
     email: "janedoe12@mail.com",
     password: "1234",
     firstName: "Marie",
