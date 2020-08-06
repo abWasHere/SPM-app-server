@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const teamModel = require("./../models/Team.js");
 const fileUploader = require("./../config/cloudinary");
-
+const Player = require("../models/Player");
 //  --------------------------------------
 // ROUTES PREFIX IS    /api/team
 //  --------------------------------------
@@ -10,14 +10,7 @@ const fileUploader = require("./../config/cloudinary");
 router.get("/", function (req, res, next) {
   teamModel
     .find()
-    .populate("sport club")
-    .populate({
-      path: "registeredPlayers",
-      populate: {
-        path: "player",
-        model: "Player",
-      },
-    })
+    .populate("sport club registeredPlayers")
     .then((dbResTeam) => {
       res.status(200).json(dbResTeam);
     })
@@ -41,14 +34,7 @@ router.get("/", function (req, res, next) {
 router.get("/:id", (req, res) => {
   teamModel
     .findById(req.params.id)
-    .populate("sport club")
-    .populate({
-      path: "registeredPlayers",
-      populate: {
-        path: "player",
-        model: "Player",
-      },
-    })
+    .populate("sport club registeredPlayers")
     .then((team) => {
       res.status(200).json(team);
     })

@@ -21,18 +21,14 @@ const clubSchema = new Schema({
   role: { type: String, enum: ["Club"], default: "Club" },
   favoritePlayers: [
     {
-      player: {
-        type: Schema.Types.ObjectId,
-        ref: "Player",
-      },
+      type: Schema.Types.ObjectId,
+      ref: "Player",
     },
   ],
   favoriteClubs: [
     {
-      club: {
-        type: Schema.Types.ObjectId,
-        ref: "Club",
-      },
+      type: Schema.Types.ObjectId,
+      ref: "Club",
     },
   ],
 });

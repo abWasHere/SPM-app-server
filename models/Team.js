@@ -25,10 +25,8 @@ const teamSchema = new Schema({
   },
   registeredPlayers: [
     {
-      player: {
-        type: Schema.Types.ObjectId,
-        ref: "Player",
-      },
+      type: Schema.Types.ObjectId,
+      ref: "Player",
     },
   ],
   division: String,
