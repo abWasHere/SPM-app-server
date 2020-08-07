@@ -62,14 +62,21 @@ router.patch(
     if (req.file) updatedInfos.picture = req.file.path;
 
     playerModel
-      .findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
-      .then((updatedUser) => {
-        req.session.currentUser = updatedUser;
-        res.status(200).json(updatedUser);
-      })
-      .catch((err) => {
-        res.status(500).json(err);
-      });
+			.findByIdAndUpdate(req.params.id, updatedInfos, { new: true })
+			.populate({
+				path: "practice",
+				populate: {
+					path: "sport",
+					model: "Sport",
+				},
+			})
+			.then((updatedUser) => {
+				req.session.currentUser = updatedUser;
+				res.status(200).json(updatedUser);
+			})
+			.catch((err) => {
+				res.status(500).json(err);
+			});
   }
 );
 

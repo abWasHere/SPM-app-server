@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
 
 // CLUB GET INFOS
 
-router.get("/:id", protectPrivateRoute, (req, res) => {
+router.get("/:id", (req, res) => {
   clubModel
     .findById(req.params.id)
     .select("-password")
