@@ -108,8 +108,8 @@ async function sendAllSeeds() {
       team.registeredPlayers = filteredArray3;
     });
     const cleanTeamsList = await teamModel.create(teamsList);
-
     // console.log("CLEAN TEAMS LIST ========>", cleanTeamsList);
+    console.log("db updated !");
   } catch (error) {
     console.log(error);
   }

@@ -35,7 +35,7 @@ const teamsList = [
       "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/68992800_960683504266958_4116780454487523328_o.jpg?_nc_cat=105&_nc_sid=6e5ad9&_nc_ohc=MEwh6STCt7MAX98OQkH&_nc_ht=scontent-cdt1-1.xx&oh=75ef1514dd3b085e5e005f437617c441&oe=5F522292",
     location: {
       type: "Point",
-      coordinates: [2.5048660000295513, 48.800054399558775],
+      coordinates: [2.5048660000295513, 48.800082667401824],
       formattedAddress:
         "30 bd de Champigny, 94100 Saint-Maur-des-Fossés, France",
     },

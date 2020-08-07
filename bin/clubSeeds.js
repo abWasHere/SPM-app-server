@@ -64,7 +64,7 @@ const clubsList = [
     image: "http://www.vga-fr.org/images/OMNISPORTS/2019/vga_omnisports.png",
     location: {
       type: "Point",
-      coordinates: [2.4958529999986467, 48.80951033592643],
+      coordinates: [2.495842271152469, 48.80953859844007],
       formattedAddress: "8 avenue du Nord, 94100 Saint-Maur-des-Fossés, France",
     },
     phoneNumber: "0148834424",

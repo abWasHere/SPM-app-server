@@ -7,7 +7,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.3612091604104535, 48.79387197078859],
-      formattedPlace: "Villejuif, Val-de-Marne, France",
+      formattedAddress: "Villejuif, Val-de-Marne, France",
     },
     practice: {
       sport: "Boxe",
@@ -25,7 +25,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.352273820640562, 48.85664221136983],
-      formattedPlace: "Paris, France",
+      formattedAddress: "Paris, France",
     },
     practice: {
       sport: "Ultimate",
@@ -43,7 +43,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.439252372627493, 48.847664962616534],
-      formattedPlace: "Vincennes, Val-de-Marne, France",
+      formattedAddress: "Vincennes, Val-de-Marne, France",
     },
     practice: {
       sport: "Basket-ball",
@@ -61,7 +61,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.2693524386621675, 48.82299341586125],
-      formattedPlace: "Issy-les-Moulineaux, Hauts-de-Seine, France",
+      formattedAddress: "Issy-les-Moulineaux, Hauts-de-Seine, France",
     },
     practice: {
       sport: "Football",
@@ -80,7 +80,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -98,7 +98,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -117,7 +117,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -136,7 +136,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -155,7 +155,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -172,7 +172,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -191,7 +191,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -208,7 +208,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -225,7 +225,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -242,7 +242,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -260,7 +260,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -278,7 +278,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.5112884044647217, 48.81346893310547],
-      formattedPlace: "Champigny-sur-Marne, Val-de-Marne, France",
+      formattedAddress: "Champigny-sur-Marne, Val-de-Marne, France",
     },
     practice: {
       sport: "Football",
@@ -295,7 +295,7 @@ const playersList = [
     location: {
       type: "Point",
       coordinates: [2.2071267, 48.8924273],
-      formattedPlace: "Nanterre, France",
+      formattedAddress: "Nanterre, France",
     },
     practice: {
       sport: "Volley-ball",

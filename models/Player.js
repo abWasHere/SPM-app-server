@@ -11,7 +11,7 @@ const playerSchema = new Schema({
   location: {
     type: { type: String, enum: ["Point"] },
     coordinates: { type: [Number] },
-    formattedPlace: String,
+    formattedAddress: String,
   },
   practice: [
     {
