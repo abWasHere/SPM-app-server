@@ -1,5 +1,6 @@
 {
   "files": {
+<<<<<<< HEAD
     "main.css": "/static/css/main.24675c0f.chunk.css",
     "main.js": "/static/js/main.a28f1547.chunk.js",
     "main.js.map": "/static/js/main.a28f1547.chunk.js.map",
@@ -14,13 +15,35 @@
     "static/css/2.e4a6d3a9.chunk.css.map": "/static/css/2.e4a6d3a9.chunk.css.map",
     "static/css/main.24675c0f.chunk.css.map": "/static/css/main.24675c0f.chunk.css.map",
     "static/js/2.ba3bcc7e.chunk.js.LICENSE.txt": "/static/js/2.ba3bcc7e.chunk.js.LICENSE.txt",
+=======
+    "main.css": "/static/css/main.08e1e0e1.chunk.css",
+    "main.js": "/static/js/main.993941ab.chunk.js",
+    "main.js.map": "/static/js/main.993941ab.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.09b85ec0.js",
+    "runtime-main.js.map": "/static/js/runtime-main.09b85ec0.js.map",
+    "static/css/2.e4a6d3a9.chunk.css": "/static/css/2.e4a6d3a9.chunk.css",
+    "static/js/2.93349e8e.chunk.js": "/static/js/2.93349e8e.chunk.js",
+    "static/js/2.93349e8e.chunk.js.map": "/static/js/2.93349e8e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e4a1dc3adba98b2aec07fb0ba53986ad.js": "/precache-manifest.e4a1dc3adba98b2aec07fb0ba53986ad.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.e4a6d3a9.chunk.css.map": "/static/css/2.e4a6d3a9.chunk.css.map",
+    "static/css/main.08e1e0e1.chunk.css.map": "/static/css/main.08e1e0e1.chunk.css.map",
+    "static/js/2.93349e8e.chunk.js.LICENSE.txt": "/static/js/2.93349e8e.chunk.js.LICENSE.txt",
+>>>>>>> 364e023f93366e42992c0f8a08a9cbc1277246a9
     "static/media/Home.css": "/static/media/chris-leipelt-CBgEyshBRbM-medium-unsplash.53aa9061.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.09b85ec0.js",
     "static/css/2.e4a6d3a9.chunk.css",
+<<<<<<< HEAD
     "static/js/2.ba3bcc7e.chunk.js",
     "static/css/main.24675c0f.chunk.css",
     "static/js/main.a28f1547.chunk.js"
+=======
+    "static/js/2.93349e8e.chunk.js",
+    "static/css/main.08e1e0e1.chunk.css",
+    "static/js/main.993941ab.chunk.js"
+>>>>>>> 364e023f93366e42992c0f8a08a9cbc1277246a9
   ]
 }
