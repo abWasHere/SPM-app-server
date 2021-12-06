@@ -37,7 +37,12 @@ if (devMode === true) {
 
 // Test to see if user is logged In before getting into any router.
 app.use(function (req, res, next) {
-  console.log("current user in session : ", req.session.currentUser);
+  let sessionUser = req.session.currentUser
+  if (sessionUser && sessionUser.clubName) {
+    console.log("Current user in session : ", sessionUser.clubName.toUpperCase());
+  } else {
+    console.log("No user connected.");
+  }
   next();
 });
 
