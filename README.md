@@ -51,7 +51,7 @@ MONGODB_URI="mongodb+srv://<your-username>:<your-password>@spmcluster0.pyxkf.mon
 
 In the project directory, you can run:
 
-#### `node bin/seeds.js`
+#### `npm run seeds`
 
 Generates fake data and saves them in the database.
 This command has to be run at least one time before making any request.

@@ -32,7 +32,7 @@ const teamsList = [
     club: "VGA Saint-Maur",
     coachName: "Marie-Thérèse Aimelefoot",
     image:
-      "https://scontent-cdt1-1.xx.fbcdn.net/v/t1.0-9/68992800_960683504266958_4116780454487523328_o.jpg?_nc_cat=105&_nc_sid=6e5ad9&_nc_ohc=MEwh6STCt7MAX98OQkH&_nc_ht=scontent-cdt1-1.xx&oh=75ef1514dd3b085e5e005f437617c441&oe=5F522292",
+      "https://www.vga-fr.org/wp-content/uploads/2020/04/logo-vga.svg",
     location: {
       type: "Point",
       coordinates: [2.5048660000295513, 48.800082667401824],
@@ -124,7 +124,7 @@ const teamsList = [
     club: "Paris Féminin Football Club",
     coachName: "Léa Travert",
     image:
-      "http://parisfemininfc.fr/wp-content/uploads/2020/02/IMG_20200111_150646_785-570x432.jpg",
+      "https://parisfc.fr/wp-content/uploads/2022/10/joie.png",
     location: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
@@ -169,7 +169,7 @@ const teamsList = [
     teamName: "Juniors",
     club: "Paris Féminin Football Club",
     image:
-      "http://parisfemininfc.fr/wp-content/uploads/2020/02/IMG_20200111_150646_785-570x432.jpg",
+      "https://parisfc.fr/wp-content/uploads/2019/12/photo-des-parisiennes.jpg",
     location: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],

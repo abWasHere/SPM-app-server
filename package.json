@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build-react": "echo ---- creating react build --- && cd ../client  && npm install && npm run build && cp -r ./build/* ../server/public/ && cd ..",
+    "seeds": "node ./bin/seeds.js",
     "dev": "nodemon ./bin/www",
     "start": "node ./bin/www"
   },

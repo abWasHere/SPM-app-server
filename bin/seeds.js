@@ -110,6 +110,7 @@ async function sendAllSeeds() {
     const cleanTeamsList = await teamModel.create(teamsList);
     // console.log("CLEAN TEAMS LIST ========>", cleanTeamsList);
     console.log("db updated !");
+    mongoose.connection.close();
   } catch (error) {
     console.log(error);
   }

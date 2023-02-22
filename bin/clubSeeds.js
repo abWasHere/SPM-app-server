@@ -43,7 +43,7 @@ const clubsList = [
     password: "1234",
     clubName: "Paris Féminin Football Club",
     image:
-      "http://parisfemininfc.fr/wp-content/uploads/2020/02/LOGO-PARIS-FFC2-570.png",
+      "https://parisfc.fr/wp-content/uploads/2022/10/joie.png",
     location: {
       type: "Point",
       coordinates: [2.347191915360213, 48.83252762569717],
@@ -61,7 +61,7 @@ const clubsList = [
     email: "secretariat@vga-fr.org",
     password: "1234",
     clubName: "VGA Saint-Maur",
-    image: "http://www.vga-fr.org/images/OMNISPORTS/2019/vga_omnisports.png",
+    image: "https://www.vga-fr.org/wp-content/uploads/2020/04/logo-vga.svg",
     location: {
       type: "Point",
       coordinates: [2.495842271152469, 48.80953859844007],
